@@ -1,7 +1,7 @@
 import React from 'react';
 
-const Album = () =>(
-  //album component will go here.
+const Album = () => (
+  <section></section>
 )
 
 export default Album
