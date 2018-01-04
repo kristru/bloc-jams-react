@@ -6,7 +6,6 @@ class Album extends Component{
     super(props);
 
   const album = albumData.find( album => {
-    console.log(album, this.props);
     return album.slug === this.props.match.params.slug
   });
 
@@ -32,7 +31,16 @@ class Album extends Component{
             <col id="song-title-column" />
             <col id="song-duration-column" />
           </colgroup>
-          <tbody>
+          <tbody className='songs'>
+            {
+              this.state.album.songs.map((album,index) =>
+                 <tr key={index}>
+                    <td className="ion-play">album#</td>
+                    <td id="song-title">title{this.state.album.songs.title}</td>
+                    <td id="song-duration">duration{this.state.album.songs.duration}</td>
+                 </tr>
+              )
+           }
           </tbody>
         </table>
       </section>
