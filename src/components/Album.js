@@ -29,10 +29,15 @@ class Album extends Component{
     this.setState({isPlaying:false});
   }
 
+  setSong(song) {
+    this.audioElement.src = song.audioSrc;
+    this.setState({currentSong: song});
+  }
+
   render() {
     return (
       <section className="album">
-        <section>
+        <section id="album-info">
           <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title} />
           <div className="album-details">
             <h1 id="album-title">{this.state.album.title}</h1>
