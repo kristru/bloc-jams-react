@@ -10,10 +10,13 @@ class Album extends Component{
   });
 
     this.state = {
-      album: album
+      album: album,
+      currentSong:album.songs[0],
+      isPlaying:false
     };
 
-    console.log(album.songs[0])
+    this.audioElement = document.createElement('audio');
+    this.audioElement.src = album.songs[0].audioSrc
   }
 
   render() {
