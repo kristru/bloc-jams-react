@@ -34,6 +34,16 @@ class Album extends Component{
     this.setState({currentSong: song});
   }
 
+  handleSongClick(song){
+    const isSameSong = this.state.currentSong === song;
+
+    if(this.state.isPlaying === true && isSameSong === true){
+      this.pause();
+    } else {
+      this.play();
+    }
+  }
+
   render() {
     return (
       <section className="album">
@@ -51,16 +61,22 @@ class Album extends Component{
             <col id="song-title-column" />
             <col id="song-duration-column" />
           </colgroup>
-          <tbody className='songs'>
+          <tbody>
             {
-              this.state.album.songs.map((album,index) =>
-                 <tr key={index}>
-                    <td className="ion-play" icon="ion-play">{index+1}</td>
-                    <td id="song-title">{this.state.album.songs[index].title}</td>
-                    <td id="song-duration">{this.state.album.songs[index].duration}</td>
+              this.state.album.songs.map((song,index) =>
+                 <tr className="song" key={index} onclick={() => this.handleSongClick(song)}>
+                  <td className="song-actions">
+                    <button>
+                      <span className="song-number" icon="ion-play">{index+1}</span>
+                      <span className="ion-play"></span>
+                      <span className="ion-pause"></span>
+                    <button>
+                  </td>
+                  <td className="song-title">{this.state.album.songs[index].title}</td>
+                  <td id="song-duration">{this.state.album.songs[index].duration}</td>
                  </tr>
-              )
-           }
+               )
+              }
           </tbody>
         </table>
       </section>
