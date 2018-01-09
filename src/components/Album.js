@@ -86,9 +86,7 @@ handleNextClick(song){
                  <tr className="song" key={index} onClick={() => this.handleSongClick(song)}>
                   <td className="song-actions">
                     <button>
-                      <span className="song-number" icon="ion-play">{index+1}</span>
-                      <span className="ion-play"></span>
-                      <span className="ion-pause"></span>
+                      <span className="song-number">{index+1}</span>
                     </button>
                   </td>
                   <td className="song-title">{this.state.album.songs[index].title}</td>
