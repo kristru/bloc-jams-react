@@ -91,6 +91,12 @@ handleTimeChange(e){
   this.setState({ currentTime: newTime });
 }
 
+handleVolumeChange(e){
+  const volume = e.target.value;
+  this.audioElement.volume = volume;
+  this.setState({ volume:volume });
+}
+
   render() {
     return (
       <section className="album">
@@ -131,10 +137,12 @@ handleTimeChange(e){
             currentSong={this.state.currentSong}
             currentTime={this.audioElement.currentTime}
             duration={this.audioElement.duration}
+            volume={this.audioElement.volume}
             handleSongClick={() => this.handleSongClick(this.state.currentSong)}
             handlePrevClick={() => this.handlePrevClick()}
             handleNextClick={() => this.handleNextClick()}
             handleTimeChange={(e) => this.handleTimeChange(e)}
+            handleVolumeChange={(e) => this.handleVolumeChange(e)}
           />
       </section>
     );
