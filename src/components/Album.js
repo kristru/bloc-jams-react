@@ -97,6 +97,15 @@ handleVolumeChange(e){
   this.setState({ volume:volume });
 }
 
+formatTime(time) {
+  var min = Math.floor(time/60);
+  var sec = Math.round(time - (min*60));
+  if(isNaN(time)){return '--:--';}
+  if(min < 10) {min = '0' + min;}
+  if(sec < 10) {sec = '0' + sec;}
+  return min + ':' + sec;
+}
+
   render() {
     return (
       <section className="album">
@@ -126,7 +135,7 @@ handleVolumeChange(e){
                     </button>
                   </td>
                   <td className="song-title">{this.state.album.songs[index].title}</td>
-                  <td id="song-duration">{this.state.album.songs[index].duration}</td>
+                  <td id="song-duration">{this.formatTime(this.state.album.songs[index].duration)}</td>
                  </tr>
                )
               }
@@ -135,8 +144,8 @@ handleVolumeChange(e){
           <PlayerBar
             isPlaying={this.state.isPlaying}
             currentSong={this.state.currentSong}
-            currentTime={this.audioElement.currentTime}
-            duration={this.audioElement.duration}
+            currentTime={this.formatTime(this.audioElement.currentTime)}
+            duration={this.formatTime(this.audioElement.duration)}
             volume={this.audioElement.volume}
             handleSongClick={() => this.handleSongClick(this.state.currentSong)}
             handlePrevClick={() => this.handlePrevClick()}
