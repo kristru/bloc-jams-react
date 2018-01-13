@@ -152,7 +152,7 @@ formatTime(time) {
             handleNextClick={() => this.handleNextClick()}
             handleTimeChange={(e) => this.handleTimeChange(e)}
             handleVolumeChange={(e) => this.handleVolumeChange(e)}
-            formatTime={() => this.formatTime()}
+            formatTime={(time) => this.formatTime(time)}
           />
       </section>
     );
