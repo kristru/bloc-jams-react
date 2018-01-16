@@ -8,13 +8,14 @@ import Album from './components/Album';
 class App extends Component {
   render() {
     return (
-      <div className="App">
+      <div className="App container viewport">
         <header>
-          <nav>
-            <Link to="/">Landing </Link>
-            <Link to="/library"> Library</Link>
+          <nav className="container-fluid row">
+            <div className="menu">
+              <Link to="/"><img src="/assets/images/logo.png" alt="bloc jams logo" /> </Link>
+              <Link to="/library"> Library</Link>
+            </div>
           </nav>
-          <h1>Bloc Jams</h1>
         </header>
         <main>
           <Route exact path="/" component={Landing} />

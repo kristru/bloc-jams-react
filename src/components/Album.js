@@ -12,10 +12,10 @@ class Album extends Component{
 
     this.state = {
       album: album,
-      currentSong:album.songs[0],
+      currentSong: album.songs[0],
       currentTime: 0,
       duration: album.songs[0].duration,
-      isPlaying:false,
+      isPlaying: false,
     };
 
     this.audioElement = document.createElement('audio');
@@ -68,74 +68,73 @@ class Album extends Component{
     }
   }
 
-handlePrevClick(song){
-  const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
-  const newIndex = Math.max(0, currentIndex - 1);
-  const newSong = this.state.album.songs[newIndex];
-  this.setSong(newSong);
-  this.play(newSong);
-}
+  handlePrevClick(song){
+    const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
+    const newIndex = Math.max(0, currentIndex - 1);
+    const newSong = this.state.album.songs[newIndex];
+    this.setSong(newSong);
+    this.play(newSong);
+  }
 
-handleNextClick(song){
-  const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
-  const newIndex = (currentIndex + 1);
-  if(newIndex === this.state.album.songs.length) {return;};
-  const newSong = this.state.album.songs[newIndex];
-  this.setSong(newSong);
-  this.play(newSong);
-}
+  handleNextClick(song){
+    const currentIndex = this.state.album.songs.findIndex(song => this.state.currentSong === song);
+    const newIndex = (currentIndex + 1);
+    if(newIndex === this.state.album.songs.length) {return;};
+    const newSong = this.state.album.songs[newIndex];
+    this.setSong(newSong);
+    this.play(newSong);
+  }
 
-handleTimeChange(e){
-  const newTime = this.audioElement.duration * e.target.value;
-  this.audioElement.currentTime = newTime;
-  this.setState({ currentTime: newTime });
-}
+  handleTimeChange(e){
+    const newTime = this.audioElement.duration * e.target.value;
+    this.audioElement.currentTime = newTime;
+    this.setState({ currentTime: newTime });
+  }
 
-handleVolumeChange(e){
-  const volume = e.target.value;
-  this.audioElement.volume = volume;
-  this.setState({ volume:volume });
-}
+  handleVolumeChange(e){
+    const volume = e.target.value;
+    this.audioElement.volume = volume;
+    this.setState({ volume:volume });
+  }
 
-formatTime(time) {
-  var min = Math.floor(time/60);
-  var sec = Math.round(time - (min*60));
-  if(isNaN(time)){return '--:--';}
-  if(min < 10) {min = '0' + min;}
-  if(sec < 10) {sec = '0' + sec;}
-  return min + ':' + sec;
-}
+  formatTime(time) {
+    var min = Math.floor(time/60);
+    var sec = Math.round(time - (min*60));
+    if(isNaN(time)){return '--:--';}
+    if(min < 10) {min = '0' + min;}
+    if(sec < 10) {sec = '0' + sec;}
+    return min + ':' + sec;
+  }
 
   render() {
     return (
-      <section className="album">
+      <section className="album container-fluid">
         <section id="album-info">
-          <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title} />
-          <div className="album-details">
-            <h1 id="album-title">{this.state.album.title}</h1>
-            <h2 className="artist">{this.state.album.artist}</h2>
-            <div id="release-info">{this.state.album.releaseInfo}</div>
-          </div>
+            <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title} />
+            <div className="album-details">
+              <div><h3 id="album-title">{this.state.album.title}</h3></div>
+              <div className="artist">{this.state.album.artist}</div>
+              <div id="release-info">{this.state.album.releaseInfo}</div>
+            </div>
         </section>
-        <table id="song-list">
+        <table id="song-list container-fluid">
           <colgroup>
             <col id="song-number-column" />
             <col id="song-title-column" />
             <col id="song-duration-column" />
           </colgroup>
-          <tbody>
+          <tbody >
             {
               this.state.album.songs.map((song,index) =>
                  <tr className="song" key={index} onClick={() => this.handleSongClick(song)}>
                   <td className="song-actions">
                     <button>
-                      <span className="song-number">{index+1}</span>
+                      <span className="song-number col-sm-2">{index+1}</span>
                       <span className="ion-play"></span>
-                      <span className="ion-pause"></span>
                     </button>
-                  </td>
-                  <td className="song-title">{this.state.album.songs[index].title}</td>
-                  <td id="song-duration">{this.formatTime(this.state.album.songs[index].duration)}</td>
+                   </td>
+                  <td className="song-title col-lg-8">{this.state.album.songs[index].title}</td>
+                  <td id="song-duration col-sm-2">{this.formatTime(this.state.album.songs[index].duration)}</td>
                  </tr>
                )
               }

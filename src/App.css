@@ -22,6 +22,116 @@
   font-size: large;
 }
 
+.library {
+  padding: 50px;
+}
+
+.album-info{
+  padding: 1em;
+}
+
+ .menu {
+  color: white;
+  font-size: 18px;
+  padding-top: 10px;
+  justify-content: flex-end;
+}
+
+ .menu a:hover{
+  color: white;
+  text-decoration: none;
+  transform: scale(1.1);
+}
+
+a {
+  color: white;
+  padding-right: 20px;
+  transform: scale(1.1);
+}
+
+.point img{
+  padding-bottom: 10px;
+}
+
+#album-cover-art{
+  float: left;
+  margin-right: 2rem;
+  position: relative;
+  width: 250px;
+  max-width: 63%;
+}
+
+#album-info {
+  overflow: hidden;
+}
+
+main {
+  box-sizing: border-box;
+}
+
+table {
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  margin: 1.5em 0;
+}
+
+button {
+  background: none;
+  border: none;
+  color: white;
+}
+
+.song-number button {
+  display: none;
+}
+
+button:hover .ion-play{
+  display: inline-block;
+}
+
+tr:hover .ion-play,
+tr.playing .ion-pause,
+tr.paused .ion-play {
+  display: block;
+}
+
+tr .ion-play,
+tr .ion-pause,
+tr:hover .song-number,
+tr.playing .ion-play,
+tr.playing .song-number,
+tr.paused .ion-pause,
+tr.paused .song-number {
+  display: none;
+}
+
+tr button {
+  border: none;
+  background: none;
+  color: white;
+  cursor: pointer;
+  padding: 0;
+}
+
+tr button:focus .song-number {
+  display: none;
+}
+tr button:focus .ion-play {
+  display: block;
+}
+
+tr.playing button:focus .song-number,
+tr.playing button:focus .ion-play {
+  display: none;
+}
+tr.playing button:focus .ion-pause {
+  display: block;
+}
+
+tbody tr {
+  border-bottom: 1px solid #ffffff;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

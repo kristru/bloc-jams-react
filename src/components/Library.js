@@ -10,17 +10,21 @@ class Library extends Component {
 
   render() {
     return (
-      <section className='library'>
+      <section className='library container-fluid'>
+        <div className="row justify-content-md-center">
         {
           this.state.albums.map((album, index) =>
-            <Link to={`/album/${album.slug}`} key={index}>
-              <img src={album.albumCover} alt={album.title} />
-              <div>{album.title}</div>
-              <div>{album.artist}</div>
-              <div>{album.songs.length} songs</div>
+            <Link to={`/album/${album.slug}`} key={index} className="col">
+              <img src={album.albumCover} alt={album.title} className=" album-cover row" />
+              <ul className="album-info row list-group">
+                <li className="row"><h3>{album.title}</h3></li>
+                <li className="row">{album.artist}</li>
+                <li className="row">{album.songs.length} songs</li>
+              </ul>
             </Link>
           )
         }
+        </div>
       </section>
     );
   }

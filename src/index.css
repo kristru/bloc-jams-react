@@ -1,5 +1,41 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  height:100%;
+  font-family: 'Raleway', sans-serif;
+  background: linear-gradient(145deg, #37C1C4, #71F474);
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+
+  color: white;
+  viewport: 100%;
+}
+
+h1 {
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+
+h3 {
+  font-size: 22px;
+}
+
+.hero-title{
+  padding: 10%;
+
+}
+
+.album-cover {
+  width: 250px;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+  transform: scale(1.1);
 }
