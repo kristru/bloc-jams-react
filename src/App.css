@@ -91,7 +91,16 @@ a {
 }
 
 #time-control input {
-  width:60%;
+  width:100%;
+}
+
+#buttons {
+  margin: 0 auto;
+}
+
+#previous:hover, #play-pause:hover, #next:hover {
+  transform: scale(1.5);
+  color: hsla(0, 0%, 100%, 1);
 }
 
 main {
@@ -110,18 +119,20 @@ button {
   color: white;
 }
 
+button:hover {
+  color: hsla(0, 0%, 100%, 1);
+}
+
 .song-number button {
   display: none;
 }
 
-button:hover .ion-play{
-  display: inline-block;
-}
 
 tr:hover .ion-play,
 tr.playing .ion-pause,
 tr.paused .ion-play {
   display: block;
+  color: hsla(0, 0%, 100%, 1);
 }
 
 tr .ion-play,
@@ -134,26 +145,8 @@ tr.paused .song-number {
   display: none;
 }
 
-tr button {
-  border: none;
-  background: none;
-  color: white;
-  cursor: pointer;
-  padding: 0;
-}
 
-tr button:focus .song-number {
-  display: none;
-}
-tr button:focus .ion-play {
-  display: block;
-}
-
-tr.playing button:focus .song-number,
-tr.playing button:focus .ion-play {
-  display: none;
-}
-tr.playing button:focus .ion-pause {
+tr .song .playing .ion-pause{
   display: block;
 }
 
@@ -171,20 +164,26 @@ tbody tr {
   padding: 20px 0;
 }
 
-#play-pause[playState="playing"] .ion-pause {
-  display: block;
+#volume-control input {
+  padding: 0px;
 }
 
-#play-pause[playState="playing"] .ion-play {
-  display: none;
-}
-
-.time-control {
-  width: 38%;
+.time-control input{
+  width: 100%;
 }
 
 .controls{
-  padding: 10px 10px;
+  margin: 1.5em auto;
+  width: 100%;
+  align-items: center;
+}
+
+.icon {
+  padding: 0px;
+}
+
+.current-time, .total-time{
+  padding: 0px;
 }
 
 @keyframes App-logo-spin {

@@ -18,31 +18,35 @@ class PlayerBar extends Component {
 
          <section className="controls container row">
            <section id="time-control" className="col-md-8 row justify-content-start">
-            <div className="current-time col">{this.props.formatTime(this.props.currentTime)}</div>
-            <input
-              type="range"
-              className="seek-bar col-md-8 col-sm-8"
-              value={(this.props.currentTime / this.props.duration) || 0}
-              max="1"
-              min="0"
-              step="0.01"
-              onChange={this.props.handleTimeChange}
-            />
-            <div className="total-time col">{this.props.formatTime(this.props.duration)}</div>
-           </section>
-
-           <section id="volume-control" className="col-md-4 row justify-content-end">
-             <div className="icon ion-volume-low col-sm-1"></div>
-             <input
+            <div className="current-time col-md-1">{this.props.formatTime(this.props.currentTime)}</div>
+            <div className="col-md-8">
+              <input
                 type="range"
-                className="seek-bar col-sm-4"
-                value={this.props.volume}
+                className="seek-bar"
+                value={(this.props.currentTime / this.props.duration) || 0}
                 max="1"
                 min="0"
                 step="0.01"
-                onChange={this.props.handleVolumeChange}
+                onChange={this.props.handleTimeChange}
               />
-             <div className="icon ion-volume-high col-sm-1"></div>
+            </div>
+            <div className="total-time col-md-1">{this.props.formatTime(this.props.duration)}</div>
+           </section>
+
+           <section id="volume-control" className="col-md-4 row justify-content-end">
+             <div className="icon ion-volume-low col"></div>
+             <div className="col">
+               <input
+                  type="range"
+                  className="seek-bar"
+                  value={this.props.volume}
+                  max="1"
+                  min="0"
+                  step="0.01"
+                  onChange={this.props.handleVolumeChange}
+                />
+              </div>
+             <div className="icon ion-volume-high col"></div>
            </section>
           </section>
       </section>

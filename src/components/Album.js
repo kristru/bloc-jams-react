@@ -98,12 +98,25 @@ class Album extends Component{
   }
 
   formatTime(time) {
+    console.log(time);
     var min = Math.floor(time/60);
     var sec = Math.round(time - (min*60));
     if(isNaN(time)){return '--:--';}
     if(min < 10) {min = '0' + min;}
     if(sec < 10) {sec = '0' + sec;}
     return min + ':' + sec;
+  }
+
+  songClass(song) {
+    console.log(this.state.currentSong === song, this.state.isPlaying);
+    if(this.state.currentSong === song){
+      if(this.state.isPlaying){ return "song playing"}
+      else{
+        return 'song';
+      }
+    }
+
+    return "song";
   }
 
   render() {
@@ -126,15 +139,16 @@ class Album extends Component{
           <tbody >
             {
               this.state.album.songs.map((song,index) =>
-                 <tr className="song" key={index} onClick={() => this.handleSongClick(song)}>
+                 <tr className={this.songClass(song)} key={index} onClick={() => this.handleSongClick(song)}>
                   <td className="song-actions">
                     <button>
                       <span className="song-number col-sm-2">{index+1}</span>
                       <span className="ion-play"></span>
+                      <span className="ion-pause"></span>
                     </button>
                    </td>
-                  <td className="song-title col-lg-8">{this.state.album.songs[index].title}</td>
-                  <td id="song-duration" className="col-sm-2">{this.formatTime(this.state.album.songs[index].duration)}</td>
+                  <td className="song-title col-lg-8">{song.title}</td>
+                  <td id="song-duration" className="col-sm-2">{this.formatTime(song.duration)}</td>
                  </tr>
                )
               }

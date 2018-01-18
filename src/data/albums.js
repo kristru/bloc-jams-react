@@ -18,9 +18,9 @@ export default [{
     albumCover: '/assets/images/album_covers/bloc-jams-mix.jpg',
     slug: 'the-bloc-jams-mix',
     songs: [
-      { title: 'Better Together', duration: '180.28', audioSrc: '/assets/music/better-together.mp3' },
-      { title: 'Give Me One Reason', duration: '240.32', audioSrc: '/assets/music/give-me-one-reason.mp3' },
-      { title: 'Knocking On Heavens Door', duration: '300.36', audioSrc: '/assets/music/knocking-on-heavens-door.mp3' },
-      { title: 'Radioactive', duration: '180.26', audioSrc: '/assets/music/radioactive.mp3' }
+      { title: 'Better Together', duration: '208', audioSrc: '/assets/music/better-together.mp3' },
+      { title: 'Give Me One Reason', duration: '272', audioSrc: '/assets/music/give-me-one-reason.mp3' },
+      { title: 'Knocking On Heavens Door', duration: '336', audioSrc: '/assets/music/knocking-on-heavens-door.mp3' },
+      { title: 'Radioactive', duration: '206', audioSrc: '/assets/music/radioactive.mp3' }
     ]
 }];
