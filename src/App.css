@@ -90,6 +90,10 @@ a {
   margin: auto;
 }
 
+#time-control input {
+  width:60%;
+}
+
 main {
   box-sizing: border-box;
 }

@@ -4,7 +4,7 @@ class PlayerBar extends Component {
   render() {
     return (
       <section className="player-bar container">
-      <section id="buttons" className="container-fluid row justify-content-center">
+        <section id="buttons" className="container-fluid row justify-content-center">
            <button id="previous" onClick={this.props.handlePrevClick}>
              <span className="ion-skip-backward"></span>
            </button>
@@ -15,12 +15,13 @@ class PlayerBar extends Component {
              <span className="ion-skip-forward"></span>
            </button>
          </section>
+
          <section className="controls container row">
            <section id="time-control" className="col-md-8 row justify-content-start">
             <div className="current-time col">{this.props.formatTime(this.props.currentTime)}</div>
             <input
               type="range"
-              className="seek-bar col-md-8"
+              className="seek-bar col-md-8 col-sm-8"
               value={(this.props.currentTime / this.props.duration) || 0}
               max="1"
               min="0"
@@ -29,6 +30,7 @@ class PlayerBar extends Component {
             />
             <div className="total-time col">{this.props.formatTime(this.props.duration)}</div>
            </section>
+
            <section id="volume-control" className="col-md-4 row justify-content-end">
              <div className="icon ion-volume-low col-sm-1"></div>
              <input
