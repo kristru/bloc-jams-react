@@ -109,15 +109,15 @@ class Album extends Component{
   render() {
     return (
       <section className="album container-fluid">
-        <section id="album-info">
-            <img id="album-cover-art" src={this.state.album.albumCover} alt={this.state.album.title} />
-            <div className="album-details">
-              <div><h3 id="album-title">{this.state.album.title}</h3></div>
-              <div className="artist">{this.state.album.artist}</div>
+        <section id="album-info" className="row">
+            <img id="album-cover-art" className="col-md-6" src={this.state.album.albumCover} alt={this.state.album.title} />
+            <div className="album-details align-content-center">
+              <div><h1 id="album-title">{this.state.album.title}</h1></div>
+              <div className="artist"><b>{this.state.album.artist}</b></div>
               <div id="release-info">{this.state.album.releaseInfo}</div>
             </div>
         </section>
-        <table id="song-list container-fluid">
+        <table id="song-list" className="container-fluid">
           <colgroup>
             <col id="song-number-column" />
             <col id="song-title-column" />
@@ -134,7 +134,7 @@ class Album extends Component{
                     </button>
                    </td>
                   <td className="song-title col-lg-8">{this.state.album.songs[index].title}</td>
-                  <td id="song-duration col-sm-2">{this.formatTime(this.state.album.songs[index].duration)}</td>
+                  <td id="song-duration" className="col-sm-2">{this.formatTime(this.state.album.songs[index].duration)}</td>
                  </tr>
                )
               }

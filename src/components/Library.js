@@ -14,7 +14,7 @@ class Library extends Component {
         <div className="row justify-content-md-center">
         {
           this.state.albums.map((album, index) =>
-            <Link to={`/album/${album.slug}`} key={index} className="col">
+            <Link to={`/album/${album.slug}`} key={index} className="col album">
               <img src={album.albumCover} alt={album.title} className=" album-cover row" />
               <ul className="album-info row list-group">
                 <li className="row"><h3>{album.title}</h3></li>

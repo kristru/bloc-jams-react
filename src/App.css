@@ -3,7 +3,6 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
 
@@ -26,8 +25,16 @@
   padding: 50px;
 }
 
+.library .album img{
+  margin-top: 2em;
+}
+
 .album-info{
   padding: 1em;
+}
+
+.artist {
+  font-size: 1.5rem;
 }
 
  .menu {
@@ -37,16 +44,22 @@
   justify-content: flex-end;
 }
 
+
  .menu a:hover{
   color: white;
   text-decoration: none;
+  padding: 0px 15px;
+  transform: none;
+}
+
+a:hover {
+  color: white;
+  padding-right: 20px;
   transform: scale(1.1);
 }
 
 a {
-  color: white;
-  padding-right: 20px;
-  transform: scale(1.1);
+  color: #ffffff;
 }
 
 .point img{
@@ -57,12 +70,24 @@ a {
   float: left;
   margin-right: 2rem;
   position: relative;
-  width: 250px;
-  max-width: 63%;
+  max-width: 350px;
+  height: 350px;
 }
 
 #album-info {
   overflow: hidden;
+  margin: 1rem 0px;
+}
+
+#song-list {
+  background-color: hsla(172, 64%, 34%, 0.5);
+  padding: 5%;
+  box-sizing: border-box;
+}
+
+.album-details {
+  padding: 1rem;
+  margin: auto;
 }
 
 main {
@@ -130,6 +155,32 @@ tr.playing button:focus .ion-pause {
 
 tbody tr {
   border-bottom: 1px solid #ffffff;
+}
+
+
+#player-bar {
+  background: hsla(0, 0%, 0%, 0.1);
+  bottom: 0;
+  height: 100px;
+  position: fixed;
+  width: 100%;
+  padding: 20px 0;
+}
+
+#play-pause[playState="playing"] .ion-pause {
+  display: block;
+}
+
+#play-pause[playState="playing"] .ion-play {
+  display: none;
+}
+
+.time-control {
+  width: 38%;
+}
+
+.controls{
+  padding: 10px 10px;
 }
 
 @keyframes App-logo-spin {
