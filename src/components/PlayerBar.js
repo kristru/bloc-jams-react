@@ -16,7 +16,7 @@ class PlayerBar extends Component {
            </button>
          </section>
 
-         <section className="controls container row">
+         <section className="controls container row justify-content-center">
            <section id="time-control" className="col-md-8 row justify-content-start">
             <div className="current-time col-md-1">{this.props.formatTime(this.props.currentTime)}</div>
             <div className="col-md-8">
