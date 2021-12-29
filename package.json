@@ -3,11 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-ionicons": "^2.1.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-ionicons": "^4.2.0",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.0.13"
+    "react-script": "^2.0.5",
+    "react-scripts": "^5.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -16,6 +17,18 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "browserify-css": "^0.14.0"
+    "browserify-css": "^0.15.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
